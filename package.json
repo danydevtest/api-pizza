@@ -1,0 +1,32 @@
+{
+  "name": "pizza-api",
+  "version": "1.0.0",
+  "description": "Backend de la pizzería",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js --exec babel-node"
+  },
+  "keywords": [
+    "mongoose",
+    "express",
+    "cors",
+    "path",
+    "nodemon"
+  ],
+  "author": "danycambrano",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.22.15",
+    "@babel/core": "^7.22.20",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.22.20",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-promise-router": "^4.1.1",
+    "mongoose": "^7.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
