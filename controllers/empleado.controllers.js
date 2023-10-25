@@ -12,6 +12,14 @@ export default{
                 descripcion
             });
 
+            agregarEmpleado.image={
+                filename: req.file.filename,
+                path: 'public/imagenes'+req.file.filename
+            }
+
+            //agregarEmpleado.filename=req.file.filename;
+            //agregarEmpleado.path= 'public/imagenes'+req.file.filename
+
             const agregar=await agregarEmpleado.save();
             res.status(200).json(agregar);
             console.log(agregar);

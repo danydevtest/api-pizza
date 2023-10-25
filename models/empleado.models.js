@@ -4,6 +4,10 @@ const empleados=new Schema({
     nombre:String,
    correo:String,
     descripcion:String,
+    image:{
+        filename: String,
+        path:String
+    },
     createAd:{type:Date, default:Date.now}
 });
 
