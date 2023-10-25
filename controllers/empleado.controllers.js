@@ -14,7 +14,7 @@ export default{
 
             agregarEmpleado.image={
                 filename: req.file.filename,
-                path: 'public/imagenes'+req.file.filename
+                path: 'public/imagenes/'+req.file.filename
             }
 
             //agregarEmpleado.filename=req.file.filename;

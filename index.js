@@ -4,11 +4,10 @@ import cors from "cors";
 import mongoose, { mongo } from "mongoose";
 import path from "path";
 import multer from "multer";
-import {v4 as uuid} from "v4/uuid";
+import {v4 as uuid} from "uuid";
 
 //importación de las rutas
 import routes from "./routes";
-import { log } from "console";
 
 mongoose.Promise=global.Promise;
 const dbUrl='mongodb://127.0.0.1:27017/pizza';
@@ -25,16 +24,16 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,'public')));
 
 //Agregar imagenes al proyecto en la carpeta imagenes
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/imagenes')
+const storage=multer.diskStorage({
+  destination:(req,file,cb)=>{
+      cb(null,'public/imagenes')
   },
-  filename: function (req, file, cb) {
-   cb(null,uuid()+path.extname(file.originalname));
+  filename:(req,file,cb)=>{
+      cb(null,uuid()+path.extname(file.originalname))
   }
-})
+});
 
-app.use(multer({ storage: storage }.single('image')));
+app.use(multer({storage:storage}).single('image'));
 
 //Rutas
 app.use('/api',routes);
